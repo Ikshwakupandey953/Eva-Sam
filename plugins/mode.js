@@ -2,7 +2,7 @@ let handler = async(m, { conn, usedPrefix, command }) => {
   let isPublic = command === "public";
   let self = global.opts["self"]
 
-  if(self === !isPublic) return conn.sendButton(m.chat, `Eva Is ${!isPublic ? "Self" : "Public"} from earlier ${m.sender.split("@")[0] === global.owner[0] ? "Mbak" : "Bang"} :v`, wm, false, [[`${!isPublic ? "Public" : "Self"}`, `${usedPrefix}${!isPublic ? "public" : "self"}`]], m)
+  if(self === !isPublic) return conn.sendButton(m.chat, `Eva Is ${!isPublic ? "Self" : "Public"} from earlier ${m.sender.split("@")[0] === global.owner[0] ? "Mbak" : "Owner"} :v`, wm, false, [[`${!isPublic ? "Public" : "Self"}`, `${usedPrefix}${!isPublic ? "public" : "self"}`]], m)
 
   global.opts["self"] = !isPublic
 

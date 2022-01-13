@@ -19,8 +19,8 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
 *──「 Successful Registration 」──*
 
 ╭─「 Info 」
-│• Nama   : ${name}
-│• Umur   : ${age} yrs
+│• Name   : ${name}
+│• Age    : ${age} yrs
 │• Status : Registered √
 ╰─────
 

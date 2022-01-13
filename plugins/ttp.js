@@ -1,4 +1,4 @@
-const { sticker } = require('../lib/sticker')
+const { sticker } = require('../lib/sticker3')
 const { MessageType } = require('@adiwajshing/baileys')
 const fetch = require('node-fetch')
 

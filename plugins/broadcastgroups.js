@@ -1,5 +1,5 @@
 let handler = async (m, { conn, text }) => {
-  let groups = conn.chats.all().filter(v => v.jid.endsWith('g.us')).map(v => v.jid)
+  let groups = conn.global.db.data.chats().filter(v => v.jid.endsWith('g.us')).map(v => v.jid)
   let cc = text ? m : m.quoted ? await m.getQuotedObj() : false || m
   let teks = text ? text : cc.text
   conn.reply(m.chat, `_Send a broadcast message to ${groups.length} group_\estimate completed ${groups.length * 1.5} second`, m)

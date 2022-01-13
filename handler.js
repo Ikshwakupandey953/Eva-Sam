@@ -33,7 +33,7 @@ module.exports = {
       year: 'numeric'
     }).format(d)
     let _uptime = process.uptime() * 1000
-    let time = require('moment-timezone').tz('Asia/Kolakata').format('HH:mm:ss') 
+    let time = require('moment-timezone').tz('Asia/Kolkata').format('HH:mm:ss') 
     let runtime = clockString(_uptime)
     let mode = //  
         global.infobot = `

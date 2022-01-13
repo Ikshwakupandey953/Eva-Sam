@@ -14,6 +14,6 @@ await conn.sendButtonImg(m.chat, await (await fetch(json.image)).buffer(), itsuk
 }
 handler.command = /^pinterest$/i
 handler.tags = ['internet']
-handler.help = ['pinterest <query>']
+handler.help = ['pinterest2 <query>']
 module.exports = handler
 

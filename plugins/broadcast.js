@@ -1,5 +1,5 @@
 let handler = async (m, { conn, text }) => {
-  let chats = conn.chats.all().filter(v => v.jid.endsWith('.net')).map(v => v.jid)
+  let chats = conn.global.db.data.chats().filter(v => v.jid.endsWith('.net')).map(v => v.jid)
   let cc = conn.serializeM(text ? m : m.quoted ? await m.getQuotedObj() : false || m)
   let teks = text ? text : cc.text
   conn.reply(m.chat, `_Send a broadcast message to ${chats.length} chat_\nEstimation complete ${chats.length * 1.5} second`, m)

@@ -1,5 +1,5 @@
 let handler = async (m, { conn }) => {
-    const chats = conn.chats.all()
+    const chats = conn.global.db.data.chats()
     const groups = chats.filter(v => v.jid.endsWith('g.us'))
 
     let _uptime = process.uptime() * 1000

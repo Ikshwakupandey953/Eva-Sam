@@ -9,12 +9,12 @@ const { servers, yta, ytv } = require('../lib/y2mate')
 let yts = require('yt-search')
 let fetch = require('node-fetch')
 let handler = async (m, { conn, command, text, usedPrefix }) => {
-if (!text) throw `uhm.. cari apa?\n\ncontoh:\n${usedPrefix + command} i see your monster`
+if (!text) throw `uhm .. what are you looking for?\n\nexample:\n${usedPrefix + command} beliver`
 let chat = global.db.data.chats[m.chat]
 conn.reply(m.chat, wait, m) 
 let results = await yts(text)
 let vid = results.all.find(video => video.seconds < 3600)
-if (!vid) throw 'Konten Tidak ditemukan'
+if (!vid) throw 'Content Not found'
 let isVideo = /2$/.test(command)
 let yt = false
 let yt2 = false
@@ -27,17 +27,15 @@ for (let i in servers) {
     usedServer = server
     break
   } catch (e) {
-    m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\nmencoba server lain...'}`)
+    m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\ntry another server...'}`)
   }
 }
-if (yt === false) throw 'semua server gagal'
-if (yt2 === false) throw 'semua server gagal'
 let { dl_link, thumb, title, filesize, filesizeF } = yt
 let konrasel = `*───「 YT Downloader 」───*
 
-*Judul:* ${title}
-*Ukuran File Audio:* ${filesizeF}
-*Ukuran File Video:* ${yt2.filesizeF}
+*Title:* ${title}
+*🎵 Audio File Size:* ${filesizeF}
+*📽 Video File Size:* ${yt2.filesizeF}
 *Server y2mate:* ${usedServer}`
 const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fromObject({
       templateMessage: {
@@ -80,7 +78,7 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
 }
 handler.help = ['play'].map(v => v + ' <query>')
 handler.tags = ['downloader']
-handler.command = /^(dj|musik|song|lagu|p(lay)?)$/i
+handler.command = /^(dj|music|song|p(lay)?)$/i
 
 handler.exp = 3
 
