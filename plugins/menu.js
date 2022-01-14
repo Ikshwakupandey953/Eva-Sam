@@ -9,6 +9,17 @@ let fetch = require('node-fetch')
 let { perfomance } = require('perf_hooks')
 let moment = require('moment-timezone')
 const defaultMenu = {
+  before: `
+  ╭──「 Eva ──࿐
+  │✇ Library : *Baileys-MD*
+  │✇ Language : *Javascript*
+  │✇ Database : *MongoDB*
+  │✇ Time : ${time}
+  │✇ Date : ${date}
+  │✇ Dev : *@919539102851*
+  │✇ Mode : *${global.opts['self'] ? 'Self' : 'Public'}*
+  ╰─────────⳹
+  `,
   header: '╭─「 *%category* 」',
   body: '│ • %cmd %islimit %isPremium',
   footer: '╰────\n',
@@ -21,7 +32,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
   let arrayMenu = ['all', 'anime', 'update', 'education', 'news', 'random', 'game', 'xp', 'stiker', 'rpg', 'magicshell', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'vote', 'nsfw', 'audio', 'jadibot', 'info', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
-    'main': 'UTAMA',
+    'main': 'MAIN',
     'game': 'GAME',
     'anime': 'ANIME', 
     'rpg': 'RPG', 
@@ -33,7 +44,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
     'magicshell': 'MAGIC SHELL',
     'quotes': 'QUOTES',
     'admin': `ADMIN ${global.opts['restrict'] ? '' : '(DISABLED)'}`,
-    'group': 'GRUP',
+    'group': 'GROUP',
     'premium': 'PREMIUM',
     'internet': 'INTERNET',
     'anonymous': 'ANONYMOUS CHAT',
@@ -181,7 +192,11 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
     let uptime = clockString(_uptime)
     let waktuwib = moment.tz('Asia/Kolkata').format('HH:mm:ss')
     
-let aoa = `${ucapan()} ${name}.`.trim()
+let aoa = `${ucapan()}, ${name}
+⏳ 𝕋𝕀𝕄𝔼 : ${time}
+💮 𝕎𝔼𝔼𝕂 : ${week}
+📆 𝔻𝔸𝕋𝔼: ${date}
+☮️ 𝕆𝕎ℕ𝔼ℝ : ANIRUDH S `.trim()
 let anu = `Please Select Menu Below!`.trim()
 let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(plugin => {
     return {
@@ -419,7 +434,7 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
     let header = conn.menu.header || defaultMenu.header
     let body = conn.menu.body || defaultMenu.body
     let footer = conn.menu.footer || defaultMenu.footer
-    let after = conn.menu.after || (conn.user.jid == global.conn.user.jid ? '' : `Dipersembahkan oleh https://wa.me/${global.conn.user.jid.split`@`[0]}`) + defaultMenu.after
+    let after = conn.menu.after || (conn.user.jid == global.conn.user.jid ? '' : `Presented by https://wa.me/${global.conn.user.jid.split`@`[0]}`) + defaultMenu.after
     let _text = [
         before,
         ...Object.keys(tags).map(tag => {
@@ -455,7 +470,7 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
     //let pp = await conn.profilePictureUrl(conn.user.jid, 'image').catch(_ => path.join(__dirname, '../src/avatar_contact.png'))
     await conn.send3TemplateButtonLoc(m.chat, text.trim(), wm, await(await require('node-fetch')(img)).buffer(), `🏅Owner`, `${_p}owner`, `Source Code`, `${_p}sc`, `🎗  Info Bot  🎗`, `${_p}infobot`, m)
     } catch (e) {
-    conn.reply(m.chat, 'Maaf, menu sedang error', m)
+    conn.reply(m.chat, 'Soory,Try Again', m)
     throw e
   }
 }
