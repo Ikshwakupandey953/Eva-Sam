@@ -509,19 +509,18 @@ function clockString(ms) {
   return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
 }
 function ucapan() {
-  const time = moment.tz('Asia/Jakarta').format('HH')
-  res = "jangan lupa tidur yaah, lop yu<3"
+  const time = moment.tz('Asia/Kolkata').format('HH')
   if (time >= 4) {
-    res = "Selamat Pagi ☀"
+    res = "Good Morning ☀"
   }
   if (time > 10) {
-    res = "Selamat Siang 🌞"
+    res = "Good Afternoon 🌞"
   }
   if (time >= 15) {
-    res = "Selamat Sore 🌝"
+    res = "Good Evening 🌝"
   }
   if (time >= 18) {
-    res = "Selamat Malam 🌚"
+    res = "Good Night🌚"
   }
   return res
 }
