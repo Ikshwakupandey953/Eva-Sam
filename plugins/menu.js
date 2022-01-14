@@ -183,11 +183,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
     let uptime = clockString(_uptime)
     let waktuwib = moment.tz('Asia/Kolkata').format('HH:mm:ss')
     
-let aoa = `${ucapan()}, ${name}
-⏳ 𝕋𝕀𝕄𝔼 : ${time}
-💮 𝕎𝔼𝔼𝕂 : ${week}
-📆 𝔻𝔸𝕋𝔼: ${date}
-☮️ 𝕆𝕎ℕ𝔼ℝ : ANIRUDH S`.trim()
+let aoa = `${ucapan()} ${name}.`.trim()
 let anu = `Please Select Menu Below!`.trim()
 let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(plugin => {
     return {
