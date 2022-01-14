@@ -9,20 +9,6 @@ let fetch = require('node-fetch')
 let { perfomance } = require('perf_hooks')
 let moment = require('moment-timezone')
 const defaultMenu = {
-  before: `
-  ╭──「 Eva ──࿐
-  │✇ Library : *Baileys-MD*
-  │✇ Language : *Javascript*
-  │✇ Database : *MongoDB*
-  │✇ Version : *^0.0.1*
-  │✇ Dev : *@919539102851*
-  │✇ Runtime : *${runtime}*
-  │✇ Prefix : *Multi Prefix 「 ${usedPrefix} 」*
-  │✇ Mode : *${global.opts['self'] ? 'Self' : 'Public'}*
-  │✇ User : *${usergakdaftar}*
-  │✇ Register : *${userdaftar}*
-  ╰─────────⳹
-  %readmore `,
   header: '╭─「 *%category* 」',
   body: '│ • %cmd %islimit %isPremium',
   footer: '╰────\n',
