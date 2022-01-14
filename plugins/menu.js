@@ -18,21 +18,21 @@ const defaultMenu = {
 let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'anime', 'update', 'edukasi', 'news', 'random', 'game', 'xp', 'islamic', 'stiker', 'rpg', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'vote', 'nsfw', 'audio', 'jadibot', 'info', 'owner']
+  let arrayMenu = ['all', 'anime', 'update', 'education', 'news', 'random', 'game', 'xp', 'stiker', 'rpg', 'magicshell', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'vote', 'nsfw', 'audio', 'jadibot', 'info', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'UTAMA',
     'game': 'GAME',
     'anime': 'ANIME', 
     'rpg': 'RPG', 
-    'edukasi': 'EDUKASI', 
+    'education': 'EDUCATION', 
     'news': 'NEWS', 
     'random': 'RANDOM',
     'xp': 'EXP & LIMIT',
     'sticker': 'STIKER',
-    'kerang': 'KERANG AJAIB',
+    'magicshell': 'MAGIC SHELL',
     'quotes': 'QUOTES',
-    'admin': `ADMIN ${global.opts['restrict'] ? '' : '(Dinonaktifkan)'}`,
+    'admin': `ADMIN ${global.opts['restrict'] ? '' : '(DISABLED)'}`,
     'group': 'GRUP',
     'premium': 'PREMIUM',
     'internet': 'INTERNET',
@@ -44,8 +44,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
     'database': 'DATABASE',
     'vote': 'VOTING',
     'absen': 'ABSEN',
-    'islamic': 'ISLAMIC',
-    'audio': 'PENGUBAH SUARA',
+    'audio': 'AUDIO',
     'jadibot': 'JADI BOT',
     'info': 'INFO',
     'update': 'UPDATE',
@@ -64,8 +63,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
   if (teks == 'rpg') tags = {
     'rpg': 'Rpg'
   }
-  if (teks == 'edukasi') tags = {
-    'edukasi': 'Edukasi'
+  if (teks == 'education') tags = {
+    'education': 'Education'
   }
   if (teks == 'news') tags = {
     'news': 'News'
@@ -79,14 +78,14 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
   if (teks == 'stiker') tags = {
     'sticker': 'Stiker'
   }
-  if (teks == 'kerangajaib') tags = {
-    'kerang': 'Kerang Ajaib'
+  if (teks == 'magicshell') tags = {
+    'magicshell': 'Magic Shell'
   }
   if (teks == 'quotes') tags = {
     'quotes': 'Quotes'
   }
   if (teks == 'admin') tags = {
-    'admin': `Admin ${global.opts['restrict'] ? '' : '(Dinonaktifkan)'}`,
+    'admin': `Admin ${global.opts['restrict'] ? '' : '(Disabled)'}`,
     'group': 'Grup'
   }
   if (teks == 'group') tags = {
@@ -123,14 +122,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
   if (teks == 'absen') tags = {
     'absen': 'Absen'
   }
-  if (teks == 'islamic') tags = {
-    'islamic': 'Islamic'
-  }
-  if (teks == 'quran') tags = {
-    'quran': 'Al-Qur\'an'
-  }
   if (teks == 'audio') tags = {
-    'audio': 'Pengubah Suara'
+    'audio': 'Audio'
   }
   if (teks == 'jadibot') tags = {
     'jadibot': 'Jadi Bot'
@@ -157,7 +150,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
     let name = await registered ? global.db.data.users[m.sender].name : conn.getName(m.sender)
     let d = new Date(new Date + 3600000)
-    let locale = 'id'
+    let locale = 'en'
     let week = d.toLocaleDateString(locale, { weekday: 'long' })
     let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
     let date = d.toLocaleDateString(locale, {
