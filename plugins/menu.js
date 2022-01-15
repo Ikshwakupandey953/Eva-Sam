@@ -18,22 +18,22 @@ const defaultMenu = {
 let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'anime', 'update', 'education', 'news', 'random', 'game', 'xp', 'stiker', 'rpg', 'magicshell', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'vote', 'nsfw', 'audio', 'jadibot', 'info', 'owner']
+  let arrayMenu = ['all', 'anime', 'update', 'edukasi', 'news', 'random', 'game', 'xp', 'islamic', 'stiker', 'rpg', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'vote', 'nsfw', 'audio', 'jadibot', 'info', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
-    'main': 'MAIN',
+    'main': 'MAIN ',
     'game': 'GAME',
     'anime': 'ANIME', 
     'rpg': 'RPG', 
-    'education': 'EDUCATION', 
+    'edukasi': 'EDUCATION', 
     'news': 'NEWS', 
     'random': 'RANDOM',
     'xp': 'EXP & LIMIT',
     'sticker': 'STIKER',
-    'magicshell': 'MAGIC SHELL',
+    'kerang': 'MAGIC SHELL',
     'quotes': 'QUOTES',
-    'admin': `ADMIN ${global.opts['restrict'] ? '' : '(DISABLED)'}`,
-    'group': 'GROUP',
+    'admin': `ADMIN ${global.opts['restrict'] ? '' : '(Disabled)'}`,
+    'group': 'GRUP',
     'premium': 'PREMIUM',
     'internet': 'INTERNET',
     'anonymous': 'ANONYMOUS CHAT',
@@ -63,8 +63,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
   if (teks == 'rpg') tags = {
     'rpg': 'Rpg'
   }
-  if (teks == 'education') tags = {
-    'education': 'Education'
+  if (teks == 'edukasi') tags = {
+    'edukasi': 'Edukasi'
   }
   if (teks == 'news') tags = {
     'news': 'News'
@@ -78,8 +78,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
   if (teks == 'stiker') tags = {
     'sticker': 'Stiker'
   }
-  if (teks == 'magicshell') tags = {
-    'magicshell': 'Magic Shell'
+  if (teks == 'kerangajaib') tags = {
+    'kerang': 'Kerang Ajaib'
   }
   if (teks == 'quotes') tags = {
     'quotes': 'Quotes'
@@ -122,8 +122,14 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
   if (teks == 'absen') tags = {
     'absen': 'Absen'
   }
+  if (teks == 'islamic') tags = {
+    'islamic': 'Islamic'
+  }
+  if (teks == 'quran') tags = {
+    'quran': 'Al-Qur\'an'
+  }
   if (teks == 'audio') tags = {
-    'audio': 'Audio'
+    'audio': 'Pengubah Suara'
   }
   if (teks == 'jadibot') tags = {
     'jadibot': 'Jadi Bot'
@@ -182,7 +188,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
     let waktuwib = moment.tz('Asia/Kolkata').format('HH:mm:ss')
     
 let aoa = `${ucapan()}, ${name}
-⏳ 𝕋𝕀𝕄𝔼 : ${time}
+⏳ 𝕋𝕀𝕄𝔼 : ${waktuwib}
 💮 𝕎𝔼𝔼𝕂 : ${week}
 📆 𝔻𝔸𝕋𝔼: ${date}
 ☮️ 𝕆𝕎ℕ𝔼ℝ : ANIRUDH S`.trim()
@@ -209,193 +215,161 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
             sections: [
               {
                 "rows": [{
-                  "title": `All Commands `,
-                  "description": "All Commands menu",
+                  "title": `All Commands`,
                   "rowId": `${_p}? all`
                   }],
-                "title": `List Menu ${conn.user.name}`
+                "title": `List Menu Eva-Md`
               }, {
                 "rows": [{
-                  "title": `Anime Menu`,
-                  "description": "Menu search & random anime wibu ",
+                  "title": ` Anime`,
                   "rowId": `${_p}? anime`
                 }],
                 "title": "─────「 1 」"
               }, {
                 "rows": [{
-                  "title": ` Admin & Group Menu`,
-                  "description": "Menu for admin & group",
+                  "title": `Admin & Group`,
                   "rowId": `${_p}? admin`
                 }],
                 "title": "─────「 2 」"
               }, {
                 "rows": [{
-                  "title": ` Anonymous `,
-                  "description": "Menu for playing anonymous chat whatsapp version",
+                  "title": ` Anonymous`,
                   "rowId": `${_p}? anonymous`
                 }],
                 "title": "─────「 3 」"
               }, {
                 "rows": [{
-                  "title": ` Audio Menu`,
-                  "description": "Audio sound changer menu or convert audio",
+                  "title": ` Audio`,
                   "rowId": `${_p}? audio`
                 }],
                 "title": "─────「 4 」"
               }, {
                 "rows": [{
-                  "title": `Downloader`,
-                  "description": "Menu download media videos, photos, and files",
+                  "title": ` Downloader`,
                   "rowId": `${_p}? downloader`
                 }],
                 "title": "─────「 5 」"
               }, {
                 "rows": [{
-                  "title": `Database Menu`,
-                  "description": "Bot database check menu",
+                  "title": ` Database`,
                   "rowId": `${_p}? database`
                 }],
                 "title": "─────「 6 」"
               }, {
                 "rows": [{
-                  "title": `Menu Education`,
-                  "description": "Educational menu ",
+                  "title": ` Education`,
                   "rowId": `${_p}? edukasi`
                 }],
                 "title": "─────「 7 」"
               }, {
                 "rows": [{
                   "title": ` Fun`,
-                  "description": "The fun menu is just for fun",
                   "rowId": `${_p}? fun`
                 }],
                 "title": "─────「 8 」"
               }, {
                 "rows": [{
-                  "title": `Game`,
-                  "description": "Game Menu",
+                  "title": ` Game`,
                   "rowId": `${_p}? game`
                 }],
                 "title": "─────「 9 」"
               }, {
                 "rows": [{
                   "title": `Menu Info`,
-                  "description": "Menu info such as bot owner and bot source code",
                   "rowId": `${_p}? info`
                 }],
                 "title": "─────「 10 」"
               }, {
                 "rows": [{
                   "title": `Internet`,
-                  "description": "Menu for browsing the internet",
                   "rowId": `${_p}? internet`
                  }],
                  "title": "─────「 11 」"
               }, {
                 "rows": [{
-                  "title": `Jadibot`,
-                  "description": "Temporary bot menu",
+                  "title": ` Jadibot`,
                   "rowId": `${_p}? jadibot`
                 }],
                 "title": "─────「 13 」"
               }, {
-                "rows":[{
-                  "title": `Magic Shell`,
-                  "description": "Menu for random answers from bots",
-                  "rowId": `${_p}? kerangajaib`
-                }],
-                "title": "─────「 14 」"
-              }, {
                 "rows": [{
                   "title": ` News`,
-                  "description": "Local to international news menu",
                   "rowId": `${_p}? news`
                 }],
                 "title": "─────「 15 」"
               }, {
                 "rows": [{
                   "title": ` Nulis & Logo`,
-                  "description": "Menu related to  writing & logo",
                   "rowId": `${_p}? nulis`
                 }],
                 "title": "─────「 16 」"
               }, {
                 "rows": [{
-                  "title": `Nsfw`,
-                  "description": "Adult menu",
+                  "title": ` Nsfw`,
                   "rowId": `${_p}? nsfw`
                 }],
                 "title": "─────「 17 」"
               }, {
                 "rows": [{
                   "title": ` Premium`,
-                  "description": "Menu for premium users",
                   "rowId": `${_p}? premium`
                 }],
                 "title": "─────「 18 」"
               }, {
                 "rows": [{
-                  "title": `Quotes`,
-                  "description": "Menu random quotes &  quotes",
+                  "title": ` Quotes`,
                   "rowId": `${_p}? quotes`
                 }],
                 "title": "─────「 19 」"
               }, {
                 "rows": [{
-                  "title":  `RPG`,
-                  "description": "Menu game rpg(role playing game)",
+                  "title":  ` RPG`,
                   "rowId": `${_p}? rpg`
                 }],
                 "title": "─────「 20 」"
               }, {
                 "rows": [{
-                  "title": `Random`,
-                  "description": "Random menu of photos, videos, and stickers",
+                  "title": ` Random`,
                   "rowId": `${_p}? random`
                 }],
                 "title": "─────「 21 」"
               }, {
                 "rows": [{
-                  "title":  `Stiker`,
-                  "description": "Menu create stickers and search for stickers",
+                  "title":  ` Stiker`,
                   "rowId": `${_p}? stiker`
                 }],
                 "title": "─────「 22 」"
               }, {
                 "rows": [{
                   "title":  ` Tools`,
-                  "description": "Convert tool menu",
                   "rowId": `${_p}? tools`
                 }],
                 "title": "─────「 23 」"
               }, {
                 "rows": [{
-                  "title":  `Update`,
-                  "description": "Bot Upgrading (OWNER)",
+                  "title":  ` Update`,
                   "rowId": `${_p}? update`
                 }],
                 "title": "─────「 24 」"
               }, {
                 "rows": [{
-                  "title":  `Vote & Absent`,
-                  "description": "Menu for voting and absent",
+                  "title":  ` Vote & Absen`,
                   "rowId": `${_p}? vote`
                 }],
                 "title": "─────「 25 」"
                 }, {
                 "rows": [{
-                  "title":  `XP and Limit `,
-                  "description": "Menu check level, xp, limit, and user registration",
+                  "title":  ` XP dan Limit`,
                   "rowId": `${_p}? xp`
                 }],
                 "title": "─────「 26 」"
                 }, {
                 "rows": [{
-                  "title":  `Owner`,
-                  "description": `Special menu for owner @919539102851`,
+                  "title":  ` Owner`,
                   "rowId": `${_p}? update`
                 }],
-                "title": "Eva-Md"
+                "title": "─────「 27 」"
+                
               }
             ], "contextInfo": {
               "stanzaId": m.key.id,
@@ -457,15 +431,15 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     //let pp = await conn.profilePictureUrl(conn.user.jid, 'image').catch(_ => path.join(__dirname, '../src/avatar_contact.png'))
-    await conn.send3TemplateButtonLoc(m.chat, text.trim(), wm, await(await require('node-fetch')(img)).buffer(), `🏅Owner`, `${_p}owner`, `Source Code`, `${_p}sc`, `🎗  Info Bot  🎗`, `${_p}infobot`, m)
+    await conn.send3TemplateButtonLoc(m.chat, text.trim(), wm, await(await require('node-fetch')(img)).buffer(), `Owner`, `${_p}owner`, `Source Code`, `${_p}sc`, ` Info Bot`, `${_p}infobot`, m)
     } catch (e) {
-    conn.reply(m.chat, 'Soory,Try Again', m)
+    conn.reply(m.chat, 'Sorry ,Try Again..', m)
     throw e
   }
 }
 handler.help = ['menu','help','eva']
 handler.tags = ['main']
-handler.command = /^(menu|help|eva\?)$/i
+handler.command = /^(menu|help|eva|\?)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
@@ -501,7 +475,7 @@ function ucapan() {
     res = "Good Evening 🌝"
   }
   if (time >= 18) {
-    res = "Good Night🌚"
+    res = "Good Night 🌚"
   }
   return res
 }
