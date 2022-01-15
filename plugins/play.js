@@ -35,8 +35,7 @@ let konrasel = `*───「 YT Downloader 」───*
 
 *Title:* ${title}
 *🎵 Audio File Size:* ${filesizeF}
-*📽 Video File Size:* ${yt2.filesizeF}
-*Server y2mate:* ${usedServer}`
+*📽 Video File Size:* ${yt2.filesizeF}`
 const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fromObject({
       templateMessage: {
           hydratedTemplate: {
