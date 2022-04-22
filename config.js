@@ -1,6 +1,6 @@
-global.owner = ['919539102851'] // Put your number here
-global.mods = ['919539102851'] // Want some help?
-global.prems = ['919539102851'] // Premium user has unlimited limit
+global.owner = ['919628516236'] // Put your number here
+global.mods = ['919628516236'] // Want some help?
+global.prems = ['919628516236'] // Premium user has unlimited limit
 global.APIs = { // API Prefix
   // name: 'https://website'
   nrtm: 'https://nurutomo.herokuapp.com',
@@ -25,10 +25,10 @@ global.APIKeys = { // APIKey Here
 }
 
 //===========Sticker WM============//
-global.packname = 'Eva'
+global.packname = 'Jarvis'
 global.author = 'Sticker' 
 
-global.wm = 'Eva'
+global.wm = 'Jarvis'
 global.wait = '*Wait a minute,*'
 global.eror = '*Sorry the server is busy*'
 
@@ -38,7 +38,7 @@ global.urlnya1 = 'https://www.instagram.com/ani._.rudh_s/'
 
 //=============callButtons=============//
 global.dtc = 'Add Me'
-global.phn = '+91 95391 02851'
+global.phn = '+91 96285 16236'
 
 
 global.multiplier = 69 // The higher, The harder levelup
