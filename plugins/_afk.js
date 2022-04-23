@@ -17,7 +17,7 @@ During ${clockString(new Date - user.afk)}
         if (!afkTime || afkTime < 0) continue
         let reason = user.afkReason || ''
         conn.reply(m.chat`
-Don't tag him!
+Don't tag my owner!
 He's in AFK ${reason ? 'with reason' + reason : 'no reason'}
 During ${clockString(new Date - afkTime)}
 `, m)
